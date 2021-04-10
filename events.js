@@ -1,15 +1,13 @@
-const butn = document.getElementsByClassName('btn');
-butn.addEventListener('click', e => {
-    e.preventDefault();
-    console.log(e.target.className);
-    document.getElementById('my-form').style.background = '#ccc';
-    document.querySelector('body').classList.add('bg-dark');
-    ul.lastElementChild.innerHTML = '<h1>Changed</h1>';
-});
 
-butn.addEventListener('onmouseover', e => {
-   
-    document.getElementById('my-form').style.background = 'blue';
-    document.querySelector('body').classList.add('bg-dark');
-    ul.lastElementChild.innerHTML = '<h1>Changed</h1>';
+
+
+const person = {
+    Name:'aditya',
+    age:'21'
+}
+localStorage.setItem('user',JSON.stringify(person))
+console.log(JSON.parse(window.localStorage.getItem('user')));
+document.addEventListener('DOMContentLoaded', e => {
+    e.preventDefault();
+    console.log(window.localStorage)
 });
