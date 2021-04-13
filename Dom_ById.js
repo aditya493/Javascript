@@ -30,3 +30,23 @@ var li = document.getElementsByTagName('li')
 for (var i =0 ; i< li.length;i++){
     console.log(li[i])
  }
+
+
+ //By css selector:::::::
+
+//  var second= document.querySelector('.list-items:nth-child(1)');
+//  second.style.backgroundColor="green";
+
+//  var last = document.querySelector('.list-items:last-child');
+//  last.style.color='transparent'
+
+//  // queryselect all
+
+ var all = document.querySelectorAll('.list-items')
+ all[1].style.color="green";
+
+ var odd = document.querySelectorAll('li:nth-child(odd)');
+  
+ for (var i =0; i < odd.length; i++){
+     odd[i].style.backgroundColor="green"
+ }
