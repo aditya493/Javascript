@@ -12,3 +12,11 @@ var header = document.getElementById('header-title')
 header.style.borderBottom = 'solid 3px #000';
 header.style.color='green';
 header.style.font='bold';
+
+// by class name.
+var item = document.getElementsByClassName('list-items')
+console.log(item[1])
+item[2].style.backgroundColor='green'
+item[0].style.fontWeight="bold"
+item[1].style.fontWeight="bold"
+item[2].style.fontWeight="bold"
