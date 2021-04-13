@@ -14,9 +14,19 @@ header.style.color='green';
 header.style.font='bold';
 
 // by class name.
-var item = document.getElementsByClassName('list-items')
-console.log(item[1])
-item[2].style.backgroundColor='green'
-item[0].style.fontWeight="bold"
-item[1].style.fontWeight="bold"
-item[2].style.fontWeight="bold"
+// var item = document.getElementsByClassName('list-items')
+// console.log(item[1])
+// item[2].style.backgroundColor='green'
+// item[0].style.fontWeight="bold"
+// item[1].style.fontWeight="bold"
+// item[2].style.fontWeight="bold"
+
+
+
+// get by tag name::::::
+
+var li = document.getElementsByTagName('li')
+//console.log(li[0]);
+for (var i =0 ; i< li.length;i++){
+    console.log(li[i])
+ }
