@@ -42,6 +42,8 @@ submitButton.addEventListener("click", (e) => {
     const dt =axios.post("https://crudcrud.com/api/c57a6da1e47c49b4b7d572a51b20590b/unicorns",{name:`${name}`,emailid:`${emailId}`})
     .then(res => console.log(res))
 
+    const gt = axios.get("https://crudcrud.com/api/c57a6da1e47c49b4b7d572a51b20590b/unicorns").then(data =>addNewLineElement(data))
+
 
 
     localStorage.setItem("userDetails" + emailId, JSON.stringify(object));
@@ -66,7 +68,7 @@ function addNewLineElement(object) {
   a1.addEventListener("click", () => {
     console.log(object);
     document.getElementById("name").value = object.name;
-    document.getElementById("email").value = object.emailId;
+    // document.getElementById("email").value = object.emailId;
     li.remove();
   });
   a1.className = "delete";
