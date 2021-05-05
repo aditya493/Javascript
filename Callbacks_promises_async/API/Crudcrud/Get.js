@@ -39,10 +39,15 @@ submitButton.addEventListener("click", (e) => {
       name: name,
       emailId: emailId //unique
     };
-    const dt =axios.post("https://crudcrud.com/api/c57a6da1e47c49b4b7d572a51b20590b/unicorns",{name:`${name}`,emailid:`${emailId}`})
+    const dt =axios.post("https://crudcrud.com/api/c57a6da1e47c49b4b7d572a51b20590b/new",{name:`${name}`,emailId:`${emailId}`})
     .then(res => console.log(res))
 
-    const gt = axios.get("https://crudcrud.com/api/c57a6da1e47c49b4b7d572a51b20590b/unicorns").then(data =>addNewLineElement(data))
+    const gt = axios.get("https://crudcrud.com/api/c57a6da1e47c49b4b7d572a51b20590b/new").then(data => {
+       for(let i=0;i<data.data.length;i++){
+         addNewLineElement(data.data[i])
+       }
+      
+    })
 
 
 
@@ -81,7 +86,7 @@ function addNewLineElement(object) {
   a.value = "delete";
   a.addEventListener("click", () => {
     localStorage.removeItem("userDetails" + object.emailId);
-    // axios.delete(`${apiendpoint}/registeruser/${object._id}`);
+    axios.delete(`https://crudcrud.com/api/c57a6da1e47c49b4b7d572a51b20590b/new/${object._id}`);
     li.remove();
   });
   a.className = "delete";
